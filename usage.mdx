@@ -1,0 +1,130 @@
+---
+title: Usage
+description: Comprehensive guide to using GitHub repositories for development workflows
+---
+
+## Basic Repository Operations
+
+Master the fundamental operations for working with GitHub repositories effectively.
+
+<Steps>
+  <Step title="Clone Repository" icon="download">
+    Copy a repository to your local machine for development.
+    
+    ```bash
+git clone https://github.com/user/repo.git
+cd repo
+    ```
+  </Step>
+  <Step title="Create Branch" icon="git-branch">
+    Work on features in isolation using branches.
+    
+    ```bash
+git checkout -b feature/new-feature
+    ```
+  </Step>
+  <Step title="Make Changes" icon="edit">
+    Edit files and stage your changes for commit.
+    
+    ```bash
+git add .
+git commit -m "Add new feature"
+    ```
+  </Step>
+  <Step title="Push Changes" icon="upload">
+    Upload your commits to the remote repository.
+    
+    ```bash
+git push origin feature/new-feature
+    ```
+  </Step>
+</Steps>
+
+## Collaboration Workflow
+
+Learn how to collaborate effectively with team members using pull requests and code reviews.
+
+<Tabs>
+  <Tab title="Creating Pull Requests" icon="arrow-right">
+    <Expandable title="From GitHub Web" default-open="true">
+      1. Navigate to your repository on GitHub
+      2. Click "Compare & pull request"
+      3. Fill in title and description
+      4. Assign reviewers and labels
+      5. Click "Create pull request"
+    </Expandable>
+  </Tab>
+  <Tab title="Code Reviews" icon="eye">
+    <Expandable title="Reviewing Changes" default-open="true">
+      Review pull requests by examining code changes, adding comments, and approving or requesting changes.
+    </Expandable>
+  </Tab>
+</Tabs>
+
+## Issue Management
+
+Track bugs, features, and tasks using GitHub's issue system.
+
+<Callout kind="info">Use labels and milestones to organize and prioritize issues effectively.</Callout>
+
+<ExpandableGroup>
+  <Expandable title="Creating Issues" default-open="false">
+    Report bugs or request features by creating detailed issues with clear descriptions and reproduction steps.
+  </Expandable>
+  <Expandable title="Issue Templates" default-open="false">
+    Set up issue templates to standardize bug reports and feature requests.
+  </Expandable>
+</ExpandableGroup>
+
+## Automation with GitHub Actions
+
+Automate your development workflow using GitHub Actions.
+
+<CodeGroup tabs="CI,Deployment">
+  ```yaml
+  # .github/workflows/ci.yml
+  name: CI
+  on: [push]
+  jobs:
+    test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Run tests
+          run: npm test
+  ```
+  ```yaml
+  # .github/workflows/deploy.yml
+  name: Deploy
+  on:
+    push:
+      branches: [main]
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy to production
+          run: echo "Deploying..."
+  ```
+</CodeGroup>
+
+## Best Practices
+
+Follow these guidelines to maintain high-quality repositories.
+
+| Practice | Description |
+|----------|-------------|
+| Commit Messages | Write clear, descriptive commit messages |
+| Branch Naming | Use consistent naming conventions for branches |
+| Code Reviews | Always review code before merging |
+| Documentation | Keep README and documentation up to date |
+
+<Update label="2024-09-15" description="Usage Best Practices" tags={["feature", "improvement"]}>
+  ## Enhanced Collaboration
+  
+  - Added guidelines for effective code reviews
+  - Improved issue management workflow
+  - Updated automation examples with latest Actions syntax
+</Update>
+
+Mastering these usage patterns will help you leverage the full power of GitHub repositories for efficient development and collaboration.

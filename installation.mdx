@@ -1,0 +1,116 @@
+---
+title: Installation
+description: Step-by-step guide to setting up and configuring GitHub repositories
+---
+
+## Prerequisites
+
+Before installing and using GitHub repositories, ensure your system meets the minimum requirements. You'll need Git installed locally and a GitHub account.
+
+<Callout kind="tip">Download Git from the official website if you haven't already installed it on your system.</Callout>
+
+<Steps>
+  <Step title="Install Git" icon="download">
+    Download and install Git for your operating system from git-scm.com.
+    
+    <CodeGroup tabs="Windows,macOS,Linux">
+      ```bash
+      # Windows - Download from git-scm.com
+      ```
+      ```bash
+      # macOS
+      brew install git
+      ```
+      ```bash
+      # Linux (Ubuntu/Debian)
+      sudo apt-get update
+      sudo apt-get install git
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Create GitHub Account" icon="user">
+    Sign up for a free GitHub account at github.com if you don't have one.
+  </Step>
+  <Step title="Configure Git" icon="settings">
+    Set up your Git configuration with your name and email.
+    
+    ```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+    ```
+  </Step>
+  <Step title="Generate SSH Key" icon="key">
+    Create an SSH key for secure authentication with GitHub.
+    
+    ```bash
+ssh-keygen -t ed25519 -C "your.email@example.com"
+    ```
+  </Step>
+</Steps>
+
+## Repository Setup
+
+Once you have the prerequisites installed, you can create or clone your first repository.
+
+<Tabs>
+  <Tab title="Create New Repository" icon="plus">
+    <Expandable title="Via GitHub Web Interface" default-open="true">
+      1. Click the "New repository" button on GitHub.com
+      2. Choose a repository name and description
+      3. Select public or private visibility
+      4. Initialize with a README if desired
+      5. Click "Create repository"
+    </Expandable>
+  </Tab>
+  <Tab title="Clone Existing Repository" icon="download">
+    <Expandable title="Using Git Clone" default-open="true">
+      Copy the repository URL from GitHub and run:
+      
+      ```bash
+git clone https://github.com/user/repository-name.git
+cd repository-name
+      ```
+    </Expandable>
+  </Tab>
+</Tabs>
+
+## Environment Configuration
+
+Configure your development environment for optimal GitHub repository usage.
+
+<Callout kind="info">Consider using a code editor like VS Code with Git integration for enhanced productivity.</Callout>
+
+<ExpandableGroup>
+  <Expandable title="VS Code Setup" default-open="false">
+    Install the GitHub extension pack for seamless integration with repositories, pull requests, and issues.
+  </Expandable>
+  <Expandable title="Command Line Tools" default-open="false">
+    Set up GitHub CLI for managing repositories from the terminal.
+    
+    ```bash
+    # Install GitHub CLI
+    brew install gh  # macOS
+    gh auth login     # Authenticate
+    ```
+  </Expandable>
+</ExpandableGroup>
+
+## Troubleshooting Installation
+
+If you encounter issues during installation, check these common problems.
+
+| Issue | Solution |
+|-------|----------|
+| Git command not found | Ensure Git is installed and added to PATH |
+| SSH authentication failed | Verify SSH key is added to GitHub account |
+| Permission denied | Check repository access permissions |
+
+<Update label="2024-10-10" description="Installation Guide Update" tags={["improvement", "documentation"]}>
+  ## Recent Updates
+  
+  - Added support for GitHub CLI integration
+  - Updated installation steps for latest Git versions
+  - Improved troubleshooting section
+</Update>
+
+With these installation steps complete, you're ready to start using GitHub repositories for your projects. The usage guide will help you get started with common operations.
